@@ -16,9 +16,14 @@ export class AppComponent implements OnInit {
   constructor(public http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get<Coin[]>(this.API_URL).subscribe((res) => {
-      // this.COINS = res
-      console.log(res)
-    })
+    this.http.get<Coin[]>(this.API_URL).subscribe(
+      (res) => {
+        // this.COINS = res
+        this.COINS = res
+      },
+      (err) => {
+        console.error(err)
+      }
+    )
   }
 }

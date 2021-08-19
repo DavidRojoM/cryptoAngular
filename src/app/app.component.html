@@ -1,1 +1,37 @@
-<h1>Hello world!</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CryptoAngular</title>
+  </head>
+  <body>
+    <div class="container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Crypto</th>
+            <th>Current price</th>
+            <th>% 24h</th>
+            <th>Total volume</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let coin of COINS">
+            <td>
+              <img src="{{ coin.image }}" alt="{{ coin.name }}" />{{ coin.name
+              }}<span>{{ coin.symbol }}</span>
+            </td>
+            <td>{{ coin.current_price }}</td>
+            <td>{{ coin.price_change_percentage_24h }}</td>
+            <td>{{ coin.total_volume }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
