@@ -9,26 +9,35 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>CryptoAngular</title>
   </head>
-  <body>
+  <body class="bg-dark p-0 m-0">
     <div class="container">
-      <table class="table table-striped">
+      <table class="table table-striped table-dark">
         <thead>
           <tr>
-            <th>Crypto</th>
-            <th>Current price</th>
-            <th>% 24h</th>
-            <th>Total volume</th>
+            <th class="text-info">Crypto</th>
+            <th class="text-center text-info">Current price</th>
+            <th class="text-center text-info">% 24h</th>
+            <th class="text-center text-info">Total volume</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let coin of COINS">
             <td>
-              <img src="{{ coin.image }}" alt="{{ coin.name }}" />{{ coin.name
-              }}<span>{{ coin.symbol }}</span>
+              <img
+                class="me-5"
+                src="{{ coin.image }}"
+                alt="{{ coin.name }}"
+                width="32px"
+              />{{ coin.name }}
+              <span class="text-muted ms-1">{{ coin.symbol }}</span>
             </td>
-            <td>{{ coin.current_price }}</td>
-            <td>{{ coin.price_change_percentage_24h }}</td>
-            <td>{{ coin.total_volume }}</td>
+            <td class="text-center">
+              {{ coin.current_price.toLocaleString() }}
+            </td>
+            <td class="text-center">{{ coin.price_change_percentage_24h }}</td>
+            <td class="text-center">
+              {{ coin.total_volume.toLocaleString() }}
+            </td>
           </tr>
         </tbody>
       </table>
