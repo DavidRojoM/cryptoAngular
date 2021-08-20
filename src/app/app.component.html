@@ -39,7 +39,7 @@
               <span class="text-muted ms-1">{{ coin.symbol }}</span>
             </td>
             <td class="text-center">
-              {{ coin.current_price.toLocaleString() }}€
+              {{ coin.current_price.toLocaleString() }} €
             </td>
             <td
               class="text-center"
@@ -51,9 +51,7 @@
             >
               {{ coin.price_change_percentage_24h }}
             </td>
-            <td class="text-end">
-              {{ coin.total_volume.toLocaleString() }}
-            </td>
+            <td class="text-end">{{ coin.total_volume.toLocaleString() }} €</td>
           </tr>
         </tbody>
       </table>
